@@ -1,0 +1,47 @@
+﻿@model About
+
+@{
+    ViewData["Title"] = "Hakkımda";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<section class="col-span-12 lg:col-span-12">
+    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl custom-shadow overflow-hidden">
+        <div class="px-lg py-md border-b border-outline-variant flex justify-between items-center">
+            <h3 class="font-h3 text-h3 text-on-surface">Hakkımda Listesi</h3>
+            <div class="flex gap-sm">
+                <button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container transition-all">
+                    <span class="material-symbols-outlined text-[20px] text-on-surface-variant">filter_list</span>
+                </button>
+                <button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container transition-all">
+                    <span class="material-symbols-outlined text-[20px] text-on-surface-variant">download</span>
+                </button>
+            </div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container text-on-surface-variant border-b border-outline-variant">
+                        <th class="px-lg py-md font-label-sm uppercase tracking-wider">Başlık</th>
+                        <th class="px-lg py-md font-label-sm uppercase tracking-wider">Açıklama</th>
+                        <th class="px-lg py-md font-label-sm uppercase tracking-wider text-right"></th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/30">
+                    <tr class="hover:bg-surface-container-lowest/50 transition-colors">
+                        <td class="px-lg py-md">
+                            <div class="flex items-center gap-md">
+                                <img class="w-10 h-10 rounded-lg object-cover border border-outline-variant" data-alt="A clean, high-resolution mockup of a modern e-commerce landing page interface, showing vibrant product cards and a sleek indigo navigation bar. The style is minimalist and professional, set against a pristine white studio background with soft ambient lighting." src="@Model.ImageUrl" />
+                                <span>@Model.Title</span>
+                            </div>
+                        </td>
+                        <td class="px-lg py-md text-on-surface-variant">@Model.Description</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="/About/AddAbout/">Yeni Hakkımda Ekle</a>
+</section>
+
