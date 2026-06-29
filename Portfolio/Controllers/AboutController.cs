@@ -19,5 +19,8 @@ namespace Portfolio.Controllers
             var about = _context.Abouts.FirstOrDefault(); // ilk deger gelecek
             return View(about);
         }
+
+        
+
     }
 }
