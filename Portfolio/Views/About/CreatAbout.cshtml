@@ -1,0 +1,30 @@
+﻿@model About
+
+@{
+    ViewData["Title"] = "Hakkımda Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+<form method="post">
+
+    <div class="mb-3">
+        <label> Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label> Açıklama</label>
+        <textarea asp-for="Description" class="form-control" rows="5" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label> Görsel Url</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <button class="btn btn-outline-dark">Kaydet</button>
+    </div>
+
+</form>

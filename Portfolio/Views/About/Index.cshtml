@@ -6,8 +6,11 @@
 }
 
 <section class="col-span-12 lg:col-span-12">
-    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl custom-shadow overflow-hidden">
-        <div class="px-lg py-md border-b border-outline-variant flex justify-between items-center">
+
+    @if (Model !=null) {
+
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl custom-shadow overflow-hidden">
+            <div class="px-lg py-md border-b border-outline-variant flex justify-between items-center">
             <h3 class="font-h3 text-h3 text-on-surface">Hakkımda Listesi</h3>
             <div class="flex gap-sm">
                 <button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container transition-all">
@@ -41,7 +44,14 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <a href="/About/AddAbout/">Yeni Hakkımda Ekle</a>
+        </div>
+
+    }
+    else
+    {
+        <div class="alert alert-danger">Henüz hakkımızda bilgisi eklenmemiştir.</div>
+        <div><a href="/About/CreatAbout/" class="btn btn-outline-dark">Yeni Hakkımda Ekle</a></div>
+    }
+    
 </section>
 

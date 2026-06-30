@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Data.Context;
+using Portfolio.Data.Entities;
 
 namespace Portfolio.Controllers
 {
@@ -20,7 +21,22 @@ namespace Portfolio.Controllers
             return View(about);
         }
 
-        
+
+        [HttpGet]
+        public IActionResult CreatAbout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreatAbout(About about)
+        {
+            _context.Abouts.Add(about); 
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
 
     }
 }
